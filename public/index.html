@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <base href="/">
+        <meta charset="utf-8">
+        <title>Real Estate</title>
+        <link rel="stylesheet" href="styles/styles.css">
+        <script src="vendors/angular.min.js" charset="utf-8"></script>
+        <script src="vendors/angular-route.min.js"></script>
+        <script src="vendors/jquery-3.2.1.min.js"></script>        
+        <script src="client.js" charset="utf-8"></script>
+        <script src="controllers/rent.controller.js" charset="utf-8"></script>
+        <script src="controllers/sale.controller.js" charset="utf-8"></script>   
+        <script src="controllers/home.controller.js" charset="utf-8"></script>      
+        <script src="services/listings.service.js" charset="utf-8"></script> 
+        <script src="vendors/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="vendors/bootstrap.min.css">
+        <link rel="stylesheet" href="vendors/bootstrap-theme.min.css.map">   
+
+    <title>Real Estate</title>
+</head>
+<body ng-app="myApp">
+<main ng-view> 
+                       
+
+
+</main>   
+<div class="navbar">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/rent">See Rent Listings</a>
+            </li>
+        </ul>
+    </div>   
+
+
+    <div> I'm a footer </div>
+</body>
+</html>

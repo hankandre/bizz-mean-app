@@ -4,7 +4,7 @@
   "description": "Welcome to weekend challenge 5! This weekend, you will take on the role of an application developer for a real estate company. You will be working with data that we will be providing to you. It will be a collection called *listings*. Inside of it, you will find information for properties that are either \"for rent\" or \"for sale\".",
   "main": "listingData.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/app.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +22,12 @@
     "body-parser": "^1.18.2",
     "bootstrap": "^3.3.7",
     "express": "^4.16.1",
+    "jquery": "^3.2.1",
     "min-angular": "^1.2.0",
     "mongoose": "^4.11.13",
     "ng": "0.0.0-rc6",
-    "node": "^8.3.0"
-  }
+    "node": "^8.3.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
 }
