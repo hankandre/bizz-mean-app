@@ -4,7 +4,8 @@
   "description": "Welcome to weekend challenge 5! This weekend, you will take on the role of an application developer for a real estate company. You will be working with data that we will be providing to you. It will be a collection called *listings*. Inside of it, you will find information for properties that are either \"for rent\" or \"for sale\".",
   "main": "listingData.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,7 @@
     "node": "^8.3.0",
     "path": "^0.12.7"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
 }
