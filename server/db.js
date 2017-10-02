@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const chalk = require('chalk');
+const bluebird = require('bluebird');
 const listingData = require('../listingData');
 const Listing = require('./models/listing.model');
 const MONGO_USER = process.env.MONGO_USER;
@@ -10,9 +11,10 @@ const mongoURI =
     : `mongodb://localhost/listings`;
 
 mongoose.connect(mongoURI, {
-  useMongoClinet: true,
-  promiseLibrary: global.Promise
+  useMongoClient: true
 });
+
+mongoose.Promise = bluebird;
 
 mongoose.connection.on('connected', function() {
   console.log(chalk.green('Connected to MongoDB'));
