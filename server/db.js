@@ -8,14 +8,13 @@ const listingData = require('../listingData');
 // Bringing in my model for listings.
 const Listing = require('./models/listing.model');
 
-// These are set in heroku by typeing:
+// These are set in heroku by typing:
 // heroku config:set MONGO_USER=username MONGO_PW=password
 const MONGO_USER = process.env.MONGO_USER;
 const MONGO_PW = process.env.MONGO_PW;
 
 // This is a conditional that will set the mongoURI to the MLabs one if it's on heroku.
-// You may need to change this if you name your database differently than me.
-// I named mine prime-listings
+// You will need to change this because your url/uri will be different
 const mongoURI =
   process.env.NODE_ENV === 'production'
     ? `mongodb://${MONGO_USER}:${MONGO_PW}@ds155634.mlab.com:55634/prime-listings`
@@ -59,16 +58,16 @@ Listing.find({})
       return console.log(chalk.underline.blue(`data already inserted`));
     return Listing.create(listingData)
       .then(function(success) {
-        console.log(`Listings inserted into database`);
+        return console.log(`Listings inserted into database`);
       })
       .catch(function(err) {
-        console.log(
+        return console.log(
           chalk.bold.red(`Error inserting default listings into database `, err)
         );
       });
   })
   .catch(function(err) {
-    console.log(chalk.bold.red(`Error finding listings in database `, err));
+    return console.log(chalk.bold.red(`Error finding listings in database `, err));
   });
 
 // exporting mongoose

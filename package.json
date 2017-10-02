@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PrimeAcademy/canopus-weekend-challenge-5.git"
+    "url": "git+https://github.com/hankandre/bizz-mean-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PrimeAcademy/canopus-weekend-challenge-5/issues"
+    "url": "https://github.com/hankandre/bizz-mean-app"
   },
-  "homepage": "https://github.com/PrimeAcademy/canopus-weekend-challenge-5#readme",
+  "homepage": "https://github.com/hankandre/bizz-mean-app",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.7",
     "angular": "^1.6.6",
