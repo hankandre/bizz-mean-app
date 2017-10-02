@@ -1,1 +1,0 @@
-// db.getCollection('listings').find({cost: {$exists:true}});
