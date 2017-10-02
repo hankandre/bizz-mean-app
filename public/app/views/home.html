@@ -1,21 +1,43 @@
+<!-- Honestly, I've rarely used Bootstrap, so this was my shot at it at 11pm on a Sunday. ¯\_(ツ)_/¯ -->
 <div class="col-md-12">
+  <!-- 
+    This creates a filter for you to show either for sale properties or for rent 
+    Notice the ng-model="ctrl.selection". The values in the <option> tags will be assigned
+    To that key on the ctrl object and we can use that to filter items below
+  -->
   <select ng-model="ctrl.selection">
     <option value="for sale">For Sale</option>
     <option value="for rent">For Rent</option>
   </select>
 </div>
 <section>
+  <!-- repeating through the array -->
   <div ng-repeat="listing in ctrl.listings" class="col-md-4">
-    <div ng-if="listing.cost && ctrl.selection == 'for sale'" class="listing clearfix">
+    <!-- 
+      Using ng-if to conditionally create a For Sale property and only showing if 'For Sale' is selected from the 
+      <select> tag.
+    -->
+    <div ng-if="listing.cost && ctrl.selection == 'for sale'" class="listing">
       <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" class="img-responsive">
       <h3>For Sale</h3>
       <small>{{listing.sqft}}ft
+        <!-- The HTML tag for superscript. -->
         <sup>2</sup>
       </small>
       <p>{{listing.city}}, MN</p>
+      <!-- 
+        What you see following the listing.cost is called a filter. There are a few built in filters
+        for Angular. One for Dates, Numbers, and Currency! To use a filter you put a bar after
+        the thing you want to filter (|) and then pass it into the filter you'd like to use.
+        In this context currency, and I want it to show up as dollars but you can use Euros, Yuan, whatevs.
+       -->
       <p>{{listing.cost | currency : '$'}}</p>
     </div>
-    <div ng-if="listing.rent && ctrl.selection == 'for rent'" class="listing clearfix">
+    <!-- 
+      Using ng-if to conditionally create a For Rent property and only showing if 'For Rent' is selected from the 
+      <select> tag.
+    -->
+    <div ng-if="listing.rent && ctrl.selection == 'for rent'" class="listing">
       <img src="https://images.pexels.com/photos/259962/pexels-photo-259962.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb" class="img-responsive">
       <h3>For Rent</h3>
       <small>{{listing.sqft}}ft
